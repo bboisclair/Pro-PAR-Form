@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+
+#     # #    #  #####     ### #    #  #####          
+#     # #   #  #     #     #  #    # #    #
+#     # #  #   #           #  ##   # #         
+#     # ###    #  ####     #  # #  # #          
+#     # #  #   #     #     #  #  # # #      
+#     # #   #  #     #     #  #   ## #    # ### 
+ #####  #    #  #####     ### #    #  ####  ### 
+
+Created by: Brandon Boisclair - 2025
+
+CHANGE LOG:
+Version 1.0 - Initial Release
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Pro Suite - PAR Generator</title>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="defect_white.png" class="header-icon" title="Defect Icon">
+        <h1> PAR Generator for UKG Pro </h1>
+        <img src="defect_white.png" class="header-icon" title="Defect Icon">
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-section">
+        <!-- Right Section (Form) -->
+        <div class="right-section">
+            <div id="formContainer">
+                <form id="myForm">
+                    <h2>Section I: Issue Summary</h2>
+                    <div class="formSection" id="issueSummary">
+                        <label for="summary"><strong>Summary:</strong><span class="required-marker">*</span></label>
+                        <p style="font-style: italic; font-size: 0.9em; color: gray; display: inline;">
+                            Please provide a brief sentence that summarizes the issue being reported.
+                        </p>
+                        <br>
+                        <input type="text" id="summary" name="summary" required>
+                    </div>
+                    <h2>Section II: Issue Description</h2>
+                    <div class="formSection" id="issueDescription">
+                        <h3>A. Issue Details</h3>
+                        <label><strong>Problem:</strong><span class="required-marker">*</span></label>
+                        <p style="font-style: italic; font-size: 0.9em; color: gray; display: inline;">
+                            Please provide a detailed description of the issue, consisting of at least 3-5 sentences.
+                            This should include information on who is affected, what the issue is, when it began
+                            (specifying the date), and where it is occurring.
+                        </p>
+                        <br>
+                        <textarea id="problem" name="problem" rows="10" cols=50"></textarea>
+                        <br>
+                        <h3>B. ITG/Tenant Details</h3>
+                        <label for="server"><strong>Server:</strong><span class="required-marker">*</span></label>
+                        <input type="text" id="server" name="server" required>
+                        <br>
+                        <label for="databaseName"><strong>Database Name:</strong><span
+                                class="required-marker">*</span></label>
+                        <input type="text" id="databaseName" name="databaseName" required>
+                        <br>
+                        <label for="clientName"><strong>Client Name:</strong><span
+                                class="required-marker">*</span></label>
+                        <input type="text" id="clientName" name="clientName" required>
+                        <br>
+                        <label for="companyCode"><strong>Company Code:</strong><span
+                                class="required-marker">*</span></label>
+                        <input type="text" id="companyCode" name="companyCode" required>
+                        <br>
+                        <label for="ultiproUserID"><strong>UltiPro User ID:</strong><span
+                                class="required-marker">*</span></label>
+                        <input type="text" id="ultiproUserID" name="ultiproUserID" required>
+                        <br>
+                        <label for="ultiproWebURL"><strong>UltiPro Web URL:</strong><span
+                                class="required-marker">*</span></label>
+                        <input type="text" id="ultiproWebURL" name="ultiproWebURL" required>
+                        <br>
+                        <label for="installationBOURL"><strong>Installation Back Office URL:</strong><span
+                                class="required-marker">*</span></label>
+                        <input type="text" id="installationBOURL" name="installationBOURL" required>
+                        <br>
+                        <label for="appUptime"><strong>Application Uptime:</strong><span
+                                class="required-marker">*</span></label>
+                        <input type="text" id="appUptime" name="appUptime" required>
+                        <br>
+                        <label for="maintWindow"><strong>Maintenance Window:</strong><span
+                                class="required-marker">*</span></label>
+                        <input type="text" id="maintWindow" name="maintWindow" required>
+                        <br>
+                        <label for="installType"><strong>Install Type:</strong><span
+                                class="required-marker">*</span></label>
+                        <input type="text" id="installType" name="installType" required>
+                        <br>
+                        <h3>C. Escalation Criteria</h3>
+                        <label><strong>Is the issue reproducibile by ISSUSER?:</strong><span
+                                class="required-marker">*</span></label>
+                        <br>
+                        <input type="radio" id="issuserYes" name="issuser" value="Yes">
+                        <label for="issuserYes">Yes</label>
+                        <br>
+                        <input type="radio" id="issuserNo" name="issuser" value="No">
+                        <label for="issuserNo">No</label>
+                        <br>
+                        <br>
+                        <label><strong>Who is this impacting?:</strong><span class="required-marker">*</span></label>
+                        <div class="custom-select">
+                        <select id="impactedUsersRange" name="impactedUsersRange">
+                            <option value="" disabled="" selected="">Select a value</option>
+                            <option value="All users are affected">
+                                All users are affected</option>
+                            <option value="Only one user is affected">
+                                Only one is affected</option>
+                            <option value="Some users, but not all are affected">
+                                Some, but not all are affected</option>
+                        </select>
+                        </div>
+                        <br>
+                        <label><strong>Is there a specific time or event that triggers the problem?:</strong><span
+                                class="required-marker">*</span></label>
+                        <div class="custom-select">
+                        <select id="timeframeTrigger" name="timeframeTrigger">
+                            <option value="" disabled selected>Select a value</option>
+                            <option value="No, it is reproducible any time">
+                                No, it is reproducible any time</option>
+                            <option value="No, it occurs intermittently">
+                                No, it occurs intermittently</option>
+                            <option value="Yes, payroll processing days">
+                                Yes, payroll processing days</option>
+                            <option value="Yes, a Daylight Saving Time change">
+                                Yes, a Daylight Saving Time change</option>
+                            <option value="Yes, it is triggered by some OTHER event not listed">
+                                Yes, it is triggered by some OTHER event not listed</option>
+                        </select>
+                        </div>
+                        <br>
+                        <label for="issueOccuring"><strong>Where is the issue occurring?:</strong><span
+                                class="required-marker">*</span></label>
+                        <input type="text" id="issueOccuring" name="issueOccuring" required>
+                        <br>
+                        <br>
+                        <label><strong>Is the issue in Production or Test?:</strong><span
+                                class="required-marker">*</span></label>
+                        <br>
+                        <input type="radio" id="issueProd" name="issueLocation" value="Production">
+                        <label for="issueProd">Production</label>
+                        <br>
+                        <input type="radio" id="issueTest" name="issueLocation" value="Test">
+                        <label for="issueTest">Test</label>
+                        <br>
+                        <br>
+                        <label for="clientDeadline"><strong>When is the customer's deadline?:</strong><span
+                            class="required-marker">*</span></label>
+                        <input type="date" id="datePicker" name="datePicker">
+                        <br>
+                        <h3>D. Articles/JIRAs Reviewed</h3>
+                        <label><strong>I found an article related to my case:</strong><span
+                                class="required-marker">*</span></label>
+                        <br>
+                        <input type="radio" id="relatedArticleYes" name="relatedArticle" value="Yes">
+                        <label for="relatedArticleYes">Yes</label>
+                        <br>
+                        <input type="radio" id="relatedArticleNo" name="relatedArticle" value="No">
+                        <label for="relatedArticleNo">No</label>
+                        <br>
+                        <br>
+                        <label><strong>I found a JIRA related to my case:</strong><span
+                                class="required-marker">*</span></label>
+                        <br>
+                        <input type="radio" id="relatedJIRAYes" name="relatedJIRA" value="Yes">
+                        <label for="relatedJIRAYes">Yes</label>
+                        <br>
+                        <input type="radio" id="relatedJIRANo" name="relatedJIRA" value="No">
+                        <label for="relatedJIRANo">No</label>
+                        <br>
+                        <br>
+                        <label><strong>Article or JIRA Titles/Links:</strong></label>
+                        <p style="font-style: italic; font-size: 0.9em; color: gray; display: inline;">
+                            Please provide titles and links to articles or JIRAs that may be related to your issue.
+                        </p>
+                        <br>
+                        <textarea id="articleJIRA" name="articleJIRA" rows="10" cols=50"></textarea>
+                        <h3>E. Steps to Reproduce</h3>
+                        <label><strong>Reproduction Steps:</strong><span class="required-marker">*</span>
+                            <p style="font-style: italic; font-size: 0.9em; color: gray; display: inline;">
+                                Please provide detail steps in a number format to reproduce the issue in the box below.
+                            </p>
+                        </label>
+                        <textarea id="reproductionSteps" name="reproductionSteps" rows="15" cols=75"></textarea>
+                        <br>
+                    </div>
+                    <div class="buttonSection" id="buttonSection">
+                        <button type="button" class="button" onclick="submitForm(event)">Generate</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

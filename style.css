@@ -1,0 +1,273 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    background-color: rgb(181, 181, 181)
+}
+
+header {
+    background-color: #005151;
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: center;
+    /* Center content horizontally */
+    border-radius: 40px;
+    margin: 20px;
+    margin-top: 10px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.notice ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.main-section {
+    width: 100%;
+    /* Take up full width of the viewport */
+    padding: 20px;
+    /* Add some padding */
+    box-sizing: border-box;
+    /* Include padding and borders in the width */
+    overflow-x: auto;
+    /* Handle horizontal overflow gracefully */
+}
+
+input[type="date"] {
+    font-family: Arial, sans-serif;
+    /* Change font family */
+    font-size: 16px;
+    /* Change font size */
+    color: #333;
+    /* Change font color */
+    padding: 5px;
+    /* Add some padding */
+    border: 1px solid #ccc;
+    /* Border style */
+    border-radius: 4px;
+    /* Rounded corners */
+}
+
+.right-section {
+    flex: 3;
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 2.0);
+    /*margin-left: 325px; Uncomment this line if you want to enable the floating container */
+}
+
+.slideout-container {
+    padding-right: 10px;
+    /* position: fixed; Uncomment this line if you want to enable the floating container */
+}
+
+.header-icon {
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+}
+
+#outputForm {
+    background-color: #fff;
+    /* White background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#outputContainer {
+    margin: 20px;
+    /* Add some space between the header and the form */
+}
+
+.formSection {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    /* Border to separate sections */
+    border-radius: 5px;
+    padding: 10px;
+    /* Padding for better appearance */
+}
+
+.buttonSection {
+    border: 0px solid #000000;
+    padding: 10px;
+}
+
+label[type='text'] {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type='text'] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 40px; /* Set a fixed height */
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+button {
+    background-color: #005151;
+    /* UKG Blue */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    /* Center the button */
+    padding: 10px;
+    /* Adjust padding for larger size */
+    font-size: 16px;
+    /* Adjust font size for larger text */
+    width: 300px;
+    /* Adjust the width as needed */
+}
+
+.menuButton {
+    background: #005151;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 60px;
+    font-size: 1.2em;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+}
+
+.menuButton:hover {
+    background: #fff;
+    color: #005151;
+}
+
+.menuButton:before,
+button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #005151;
+    transition: 400ms ease all;
+}
+
+.menuButton:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+
+}
+
+.menuButton:hover:before,
+button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+@media (min-width: 768px) {
+    .button-65 {
+        padding: 14px 22px;
+        width: 176px;
+    }
+}
+
+#output {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 200px;
+    overflow: auto;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.visually-hidden {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+    clip: rect(1px, 1px, 1px, 1px);
+    /*maybe deprecated but we need to support legacy browsers */
+    clip-path: inset(50%);
+    /*modern browsers, clip-path works inwards from each corner*/
+    white-space: nowrap;
+    /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
+.required-marker {
+    color: red;
+    margin-left: 4px;
+    /* Adjust the margin as needed */
+}
+
+.custom-select {
+    width: 25%; /* Set the width of the dropdown to 50% */
+    position: relative;
+}
+
+.custom-select select {
+    appearance: none;
+    width: 100%; /* Ensure the select element takes up the full width of its container */
+    font-size: 1.15rem;
+    padding: 0.675em 2.5em 0.675em 1em; /* Adjust right padding to account for the arrow */
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.custom-select::before,
+.custom-select::after {
+    --size: 0.4rem; /* Adjust arrow size */
+    content: "";
+    position: absolute;
+    right: 1rem; /* Align the arrows to the right of the select box */
+    pointer-events: none;
+}
+
+.custom-select::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid black;
+    top: 40%; /* Center the arrow vertically */
+}
+
+.custom-select::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid black;
+    top: 55%; /* Center the second arrow vertically */
+}

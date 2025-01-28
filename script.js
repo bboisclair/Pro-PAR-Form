@@ -59,7 +59,7 @@ checkMissingField(installationBOURL, 'Installation Back Office URL');
 checkMissingField(appUptime, 'Application Uptime');
 checkMissingField(maintWindow, 'Maintenance Window');
 checkMissingField(installType, 'Installation Type');
-checkMissingField(issuser, 's the issue reproducibile by ISSUSER?');
+checkMissingField(issuser, 'Is the issue reproducibile by ISSUSER?');
 checkMissingField(impactedUsersRange, 'Who is this impacting?');
 checkMissingField(timeframeTrigger, 'Is there a specific time or event that triggers the problem?');
 checkMissingField(issueOccuring, 'Where is the issue occurring?');

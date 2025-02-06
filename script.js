@@ -17,7 +17,7 @@ function submitForm(event) {
   var installType = document.getElementById('installType').value;
   var issuser = getSelectedValue(form.elements["issuser"]);
   var impactedUsersRange = document.getElementById('impactedUsersRange').value;
-  var reproductionSteps = document.getElementById('reproductionSteps').value;
+  var reproductionStepsInput = document.getElementById('reproductionStepsInput').value;
   var timeframeTrigger = document.getElementById('timeframeTrigger').value;
   var issueOccuring = document.getElementById('issueOccuring').value;
   var issueLocation = getSelectedValue(form.elements["issueLocation"]);
@@ -67,7 +67,7 @@ checkMissingField(issueLocation, 'Is the issue in Production or Test?');
 checkMissingField(datePicker, 'When is the customers deadline?');
 checkMissingField(relatedArticle, 'I found an article related to my case');
 checkMissingField(relatedJIRA, 'I found a JIRA related to my case');
-checkMissingField(reproductionSteps, 'Reproduction Steps');
+checkMissingField(reproductionStepsInput, 'Reproduction Steps');
 
   //IF STATEMENT FOR REQUIRED FIELD CHECK
   if (missingFields.length > 0) {
@@ -140,7 +140,7 @@ checkMissingField(reproductionSteps, 'Reproduction Steps');
           <strong>Article or JIRA Titles/Links:</strong><br> ${articleJIRA.replace(/\n/g, '<br>')}
           <br>
           <h2>Steps to Reproduce</h2>
-          ${reproductionSteps.replace(/\n/g, '<br>')}
+          ${reproductionStepsInput.replace(/\n/g, '<br>')}
           <br>
           <div class="buttonSection" id="buttonSection">
             <button type="button" class = "button" onclick="closeCurrentTab(event)">Edit Information</button>
